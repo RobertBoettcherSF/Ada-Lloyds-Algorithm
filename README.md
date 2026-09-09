@@ -45,7 +45,7 @@ the series if not already present).
 | --- | --- | --- |
 | Caps | `Max_Points`, `Max_Dims`, `Max_Sites` | Fixed educational limits |
 | Types | `Point`, `Dataset`, `Sites`, `Labels`, `Parameters`, `Lloyd_Result` | Domain model |
-| Geometry | `Distance`, `Squared_Distance`, `Extract_Point` / `Extract_Site` | \(L_2\) helpers |
+| Geometry | `Distance`, `Squared_Distance`, `Extract_Point` / `Extract_Site` | $L_2$ helpers |
 | Partition | `Nearest_Site`, `Assign_Labels` | Voronoi of the sample |
 | Update | `Compute_Centroids` | Means; empty → keep + mark |
 | Quality | `Within_Cluster_SSE` / `Inertia` | SSE alias pair |
