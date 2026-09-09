@@ -31,13 +31,13 @@ the series if not already present).
 
 | Concern | Approach | Notes |
 | --- | --- | --- |
-| **Metric** | Euclidean \(L_2\) | `Distance`, `Squared_Distance` |
+| **Metric** | Euclidean $L_2$ | `Distance`, `Squared_Distance` |
 | **Discrete step** | Assign → centroid update | Sample Voronoi + means |
 | **Empty cluster** | Keep previous site + mark | `Empty_Flags`; optional `Degenerate_Cluster` |
 | **Init** | Spaced data indices | `Init_Sites_From_Data` |
-| **Stop** | \(\max_k\|\mu_k'-\mu_k\|<\mathrm{Tol}\) | or `Max_Iters` |
+| **Stop** | $\max_k \Vert \mu_k'-\mu_k \Vert < \mathrm{Tol}$ | or `Max_Iters` |
 | **CVT approx** | Uniform 2-D pixel grid | `Run_Lloyd_Grid_2D` |
-| **Quality** | Within-cluster SSE / inertia | \(\sum_i\|x_i-\mu_{\ell_i}\|^2\) |
+| **Quality** | Within-cluster SSE / inertia | $\sum_i \Vert x_i-\mu_{\ell_i} \Vert^2$ |
 
 ## Features
 
