@@ -63,13 +63,13 @@ Named exceptions: `Invalid_Argument`, `Capacity_Exceeded`,
 
 ### Continuous relaxation (CVT)
 
-Given sites \(s_1,\ldots,s_k\) in a domain \(\Omega\):
+Given sites $s_1,\ldots,s_k$ in a domain $\Omega$:
 
-\[
+$$
 V_i=\{x\in\Omega:\|x-s_i\|\le\|x-s_j\|\ \forall j\},
 \qquad
 s_i \leftarrow \frac{\int_{V_i} x\,dx}{\int_{V_i} dx}.
-\]
+$$
 
 Exact Voronoi construction in high dimension is non-trivial; a common
 approximation labels a fine pixel grid (or Monte Carlo samples) by nearest
@@ -77,21 +77,21 @@ site and averages coordinates — exactly what `Run_Lloyd_Grid_2D` does in 2-D.
 
 ### Discrete / k-means form
 
-On data \(\{x_1,\ldots,x_n\}\):
+On data $\{x_1,\ldots,x_n\}$:
 
-\[
+$$
 \ell_i=\arg\min_k\|x_i-\mu_k\|^2,
 \qquad
 \mu_k\leftarrow\frac{1}{|C_k|}\sum_{i\in C_k}x_i
 \quad(C_k=\{i:\ell_i=k\}).
-\]
+$$
 
-**Empty clusters:** if \(C_k=\emptyset\), this package **keeps** the previous
-\(\mu_k\) and sets `Empty(k) := True`. Optionally `Raise_Empty` raises
+**Empty clusters:** if $C_k=\emptyset$, this package **keeps** the previous
+$\mu_k$ and sets `Empty(k) := True`. Optionally `Raise_Empty` raises
 `Degenerate_Cluster` after the keep update.
 
 **Initialization:** `Init_Sites_From_Data` copies spaced data rows
-\(i_j=1+\lfloor(j-1)(N-1)/(K-1)\rfloor\) (for \(K>1\)); not random Forgy /
+$i_j=1+\lfloor(j-1)(N-1)/(K-1)\rfloor$ (for $K>1$); not random Forgy /
 k-means++ — deterministic for tests.
 
 Inertia (SSE) is nonincreasing under standard assign-then-update when
